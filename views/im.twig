@@ -1,0 +1,79 @@
+{% extends 'layout.twig' %}
+{% block main %}
+   <header class="header">
+      <div class="header__content">
+         <div class="header__title">В сети</div>
+         <div class="header__action"></div>
+         <div class="top-profile">
+               <div class="top-profile__name">{{userName}}</div>
+               <img src="/img/example/user_photo.png" alt="" class="top-profile__img top-profile__img_round" />
+               <nav class="top-profile__menu">⋮</nav>
+         </div>
+      </div>
+   </header>
+   <nav class="content__block navigation navigation_horizontal">
+      <a href="/im" class="navigation__item navigation__item_selected">
+         <img src="/img/ui/messages.png" alt="Сообщения" class="navigation__img navigation__img_round">
+
+      </a>
+      <a href="" class="navigation__item">
+         <img src="/img/ui/int.png" alt="" class="navigation__img navigation__img_round">
+      </a>
+      <a href="" class="navigation__item">
+         <img src="/img/ui/friends.png" alt="" class="navigation__img navigation__img_round">
+      </a>
+      <a href="" class="navigation__item">
+         <img src="/img/ui/video.png" alt="" class="navigation__img navigation__img_round">
+      </a>
+      <a href="" class="navigation__item">
+         <img src="/img/ui/photo.png" alt="" class="navigation__img navigation__img_round">
+      </a>
+      <a href="" class="navigation__item">
+         <img src="/img/ui/music.png" alt="" class="navigation__img navigation__img_round">
+      </a>
+   </nav>
+   <main class="content content_messages">
+      <div class="content__block messages">
+         <a href="/" class="messages__back">< Назад</a>
+         <div class="messages__title">Сообщения</div>
+         <div class="messages__types">
+            <div class="messages__type messages__type_friends messages__type_selected">Друзья</div>
+            <div class="messages__type messages__type_all">Все пользователи</div>
+         </div>
+         <div class="messages__content">
+            <aside class="messages__user-list">
+                  {% for user in usersList %}
+                     <div class="user">
+                     <a href="" class="user__photo">
+                        <img src="{{ user.photo }}" alt="Фото" class="user__img">
+                     </a>
+                     <div class="user__name" title="{{ user.name }}">{{ user.name }}</div>
+                     {# {% if user.meow == true %} МЯВ {% endif %} #}
+                  </div>
+                  {% endfor %}               
+            </aside>
+            <div class="messages__chat">
+                  <section class="messages__message-list">
+                  {% for message in messageList %}
+                     <article class="message">
+                        <a href="" class="message__photo message__photo_round">
+                              <img src="{{ message.author.photo }}" alt="Фото" class="message__img"/>
+                        </a>
+                        <p class="message__author" title="Алексей Попов">{{ message.author.name }}</p>
+                        <p class="message__date">{{ message.date }}</p>
+                        <div class="message__content">
+                              <p class="message__text">{{ message.text }}</p>
+                              <div class="thumbnails"></div>
+                        </div>
+                     </article>
+                  {% endfor %}   
+                  </section>
+                  <form class="messages__form">
+                     <textarea name="" id="" rows="1" class="messages__textarea"></textarea>
+                     <button class="messages__send messages__send">Отпр.</button>
+                  </form>
+            </div>
+         </div>
+      </div>
+   </main>
+{% endblock %}

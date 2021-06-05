@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Страница пользователя</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__title">В сети</div>
+                <div class="header__action">Редактировать</div>
+                <div class="top-profile">
+                    <div class="top-profile__name">Анастасия</div>
+                    <img src="/img/example/user_photo.png" alt="" class="top-profile__img top-profile__img_round" />
+                    <nav class="top-profile__menu">⋮</nav>
+                </div>
+            </div>
+        </header>
+        <main class="content content_profile">
+            <div class="content__left">
+                <form class="content__block profile">
+                    <p class="profile__title profile__title_nowrap">Анастасия Королева</p>
+
+                    <div class="profile__info profile__info_short profile__info_editable">
+                        <textarea name="" id="" rows="2"
+                            class="profile__description profile__description_input">Меня легко потерять и невозможно забыть.</textarea>
+
+                        <label for="value1" class="profile__label profile__label_input">День рождения</label>
+                        <input type="date" name="" id="value1" class="profile__value profile__value_input"
+                            value="1998-05-13">
+
+                        <label for="value2" class="profile__label profile__label_input">Город</label>
+                        <input type="text" name="" id="value2" class="profile__value profile__value_input" value="Тула">
+
+                        <label for="value3" class="profile__label profile__label_input">Семейное положение</label>
+                        <select class="profile__value profile__value_input" id="value3">
+                            <option>Не в отношениях</option>
+                            <option>В браке</option>
+                            <option selected>Все сложно</option>
+                        </select>
+
+                    </div>
+
+                    <div class="profile__more">Показать/скрыть подробности</div>
+                    <div class="profile__info profile__info_full">
+                        <!-- <div class="profile__info profile__info_full profile__info_hide"> -->
+                        <p class="profile__label">Образование</p>
+                        <p class="profile__value">УГАТУ 2022</p>
+                        <p class="profile__label">Место работы</p>
+                        <p class="profile__value">Студия "Эксплорер 5 - 0"</p>
+                    </div>
+                </form>
+                <div class="content__block profile-photos">
+                    <a href="/img/example/gallery/cat1.jpg" target="_blank" class="profile-photos__photo">
+                        <img src="/img/example/gallery/cat1.jpg" alt="" class="profile-photos__img" />
+                    </a>
+                    <a href="/img/example/gallery/cat2.jpg" target="_blank" class="profile-photos__photo">
+                        <img src="/img/example/gallery/cat2.jpg" alt="" class="profile-photos__img" />
+                    </a>
+                    <a href="/img/example/gallery/cat3.jpg" target="_blank" class="profile-photos__photo">
+                        <img src="/img/example/gallery/cat3.jpg" alt="" class="profile-photos__img" />
+                    </a>
+                    <a href="/img/example/gallery/cat4.jpg" target="_blank" class="profile-photos__photo">
+                        <img src="/img/example/gallery/cat4.jpg" alt="" class="profile-photos__img" />
+                    </a>
+
+                </div>
+                <section class="profile-wall">
+                    <article class="content__block post">
+                        <div class="post__header">
+                            <a href="" class="post__image">
+                                <img src="/img/example/gallery/cat7.jpg" alt="" class="post__img">
+                            </a>
+                            <div class="post__header-info">
+                                <a class="post__author">Марина Краснова</a>
+                                <p class="post__date">7 марта 2020 в 04:12</p>
+                            </div>
+                            <div class="post__menu">⋮
+                                <div class="ui-actions ui-actions_hide">
+                                    <p class="ui-actions__menu-item">Удалить</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <p class="post__text">Это ты</p>
+                            <div class="thumbnails">
+                                <a href="/img/example/gallery/mem1.jpg" target="_blank" class="thumbnails__thumb">
+                                    <img src="/img/example/gallery/mem1.jpg" alt="Картинка"
+                                        class="thumbnails__thumb-img">
+                                </a>
+                                <a href="/img/example/gallery/mem4.jpg" target="_blank" class="thumbnails__thumb">
+                                    <img src="/img/example/gallery/mem4.jpg" alt="Картинка"
+                                        class="thumbnails__thumb-img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="post__footer"></div>
+                    </article>
+                    <article class="content__block post">
+                        <div class="post__header">
+                            <a href="" class="post__image">
+                                <img src="/img/example/gallery/cat8.jpg" alt="" class="post__img">
+                            </a>
+                            <div class="post__header-info">
+                                <a class="post__author">Иван Иванов</a>
+                                <p class="post__date">7 марта 2020 в 03:12</p>
+                            </div>
+                            <div class="post__menu">⋮
+                                <div class="ui-actions ui-actions_hide">
+                                    <p class="ui-actions__menu-item">Удалить</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <p class="post__text">
+                                Смотри что нашел
+                            <table class="table">
+                                <caption class="table__caption">Твоя профессия в прошлой жизни</caption>
+                                <tbody>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Месяц рождения</th>
+                                        <th>День рождения</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Январь - добрый</td>
+                                        <td>1 - врач</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Февраль - скромный</td>
+                                        <td>2 - учитель</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Март - злой</td>
+                                        <td>3 - моряк</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Апрель - трудолюбивый</td>
+                                        <td>4 - продавец</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Май - креативный</td>
+                                        <td>5 - парфюмер</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Июнь - коварный</td>
+                                        <td>6 - ювелир</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Июль - вредный</td>
+                                        <td>7 - знахарь</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Август - бережливый</td>
+                                        <td>8 - повар</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Сентябрь - старательный</td>
+                                        <td>9 - башмачник</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Октябрь - старший</td>
+                                        <td>10 - плотник</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Ноябрь - ленивый</td>
+                                        <td>11 - строитель</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Декабрь - главный</td>
+                                        <td>12 - коллекционер</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td></td>
+                                        <td>13 - алхимик</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td></td>
+                                        <td>14 - охотник</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td></td>
+                                        <td>15 - лесоруб</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td></td>
+                                        <td>16 - музыкант</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td></td>
+                                        <td>17 - поэт</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td></td>
+                                        <td>18 - воин</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td></td>
+                                        <td>19 - жрец</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td></td>
+                                        <td>20 - писатель</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21</td>
+                                        <td></td>
+                                        <td>21 - винодел</td>
+                                    </tr>
+                                    <tr>
+                                        <td>22</td>
+                                        <td></td>
+                                        <td>22 - фермер</td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td></td>
+                                        <td>23 - проповедник</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td></td>
+                                        <td>24 - судья</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td>
+                                        <td></td>
+                                        <td>25 - математик</td>
+                                    </tr>
+                                    <tr>
+                                        <td>26</td>
+                                        <td></td>
+                                        <td>26 - танцор</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27</td>
+                                        <td></td>
+                                        <td>27 - полководец</td>
+                                    </tr>
+                                    <tr>
+                                        <td>28</td>
+                                        <td></td>
+                                        <td>28 - филосов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>29</td>
+                                        <td></td>
+                                        <td>29 - археолог</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td></td>
+                                        <td>30 - садовод</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31</td>
+                                        <td></td>
+                                        <td>31 - изобретатель</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </p>
+                        </div>
+                        <div class="post__footer"></div>
+                    </article>
+                    <article class="content__block post">
+                        <div class="post__header">
+                            <a href="" class="post__image">
+                                <img src="/img/example/gallery/cat5.jpg" alt="" class="post__img">
+                            </a>
+                            <div class="post__header-info">
+                                <a class="post__author">Олег Смирнов</a>
+                                <p class="post__date">7 марта 2020 в 02:12</p>
+                            </div>
+                            <div class="post__menu">⋮
+                                <div class="ui-actions ui-actions_hide">
+                                    <p class="ui-actions__menu-item">Удалить</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <p class="post__text">Гороскоп на 23 марта 2021 Телец женщина </p>
+                            <p class="post__text">
+                                <img src="img/example/telec.jpg" alt="Телец" class="float-image">
+                                Важно правильно оценить свои силы и сосредоточиться на решении практических задач. Не
+                                витайте в облаках, не верьте слишком заманчивым обещаниям. Реалистичный взгляд на вещи
+                                поможет избежать заблуждений, ошибок и напрасных надежд. Не исключены рабочие проблемы.
+                                Некоторые дела не удастся вовремя довести до конца из-за путаницы, возникшей не по вашей
+                                вине. Проявляйте снисходительность к окружающим, даже если вам кажется, что они
+                                специально испытывают ваше терпение. Вечер может порадовать приятными сюрпризами, в том
+                                числе романтическими.
+                            </p>
+                            <div class="thumbnails">
+
+                            </div>
+                        </div>
+                        <div class="post__footer"></div>
+                    </article>
+                </section>
+            </div>
+            <div class="content__right">
+                <aside class="content__block profile-photo">
+                    <a a href="/img/example/user_photo.png" target="_blank" class="profile-photo__photo">
+                        <img src="/img/example/user_photo.png" alt="Фото пользователя" class="profile-photo__img">
+                    </a>
+                </aside>
+                <nav class="content__block navigation">
+                    <a href="/im.html" class="navigation__item">
+                        <img src="/img/ui/messages.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Сообщения</p>
+                    </a>
+                    <a href="" class="navigation__item">
+                        <img src="/img/ui/int.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Интересное</p>
+                    </a>
+                    <a href="" class="navigation__item">
+                        <img src="/img/ui/friends.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Товарищи</p>
+                    </a>
+                    <a href="" class="navigation__item">
+                        <img src="/img/ui/video.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Видеотека</p>
+                    </a>
+                    <a href="" class="navigation__item">
+                        <img src="/img/ui/photo.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Фото</p>
+                    </a>
+                    <a href="" class="navigation__item">
+                        <img src="/img/ui/music.png" alt="" class="navigation__img navigation__img_round">
+                        <p class="navigation__item-name">Музыка</p>
+                    </a>
+                </nav>
+            </div>
+        </main>
+        <footer class="footer content__block content__block_down">
+            <div class="footer__title">
+                Также рекомендуем:
+            </div>
+            <div class="footer__sites">
+                <a href="https://fb.com" class="social-link">
+                    <img src="img/sites/fb.png" alt="facebook" class="social-link__img">
+                </a>
+                <a href="https://instagram.com" class="social-link">
+                    <img src="img/sites/instagram.png" alt="Instagram" class="social-link__img">
+                </a>
+                <a href="https://vk.com" class="social-link">
+                    <img src="img/sites/vk.png" alt="Вконтакте" class="social-link__img">
+                </a>
+                <a href="https://twitter.com" class="social-link">
+                    <img src="img/sites/twitter.png" alt="Твиттер" class="social-link__img">
+                </a>
+                <a href="https://pinterest.com" class="social-link">
+                    <img src="img/sites/pinterest.png" alt="Pinterest" class="social-link__img">
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

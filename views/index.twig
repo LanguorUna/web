@@ -1,0 +1,147 @@
+{% extends 'layout.twig' %}
+{% block main %}
+    <header class="header">
+        <div class="header__content">
+            <div class="header__title">В сети</div>
+            <div class="header__action header__action_edit">Редактировать</div>
+            <div class="header__action header__action_save hidden">Сохранить</div>
+            <div class="top-profile">
+                <div class="top-profile__name">{{userName}}</div>
+                <img src="/img/example/user_photo.png" alt="" class="top-profile__img top-profile__img_round" />
+                <nav class="top-profile__menu">⋮</nav>
+            </div>
+        </div>
+    </header>
+    <main class="content content_profile">
+        <div class="content__left">
+            <div class="content__block profile">
+                <p class="profile__title profile__title_nowrap" title="{{user.fullName}}">{{user.fullName}}</p>                        
+                <div class="profile__info profile__info_short">
+                    <p class="profile__description">{{user.status}}</p>
+                    <p class="profile__label" title="День рождения">День рождения</p>
+                    <p class="profile__value" title="{{user.birthDay}}">{{user.birthDay}}</p>
+                    <p class="profile__label" title="Город">Город</p>
+                    <p class="profile__value" title="{{user.city}}">{{user.city}}</p>
+                    <p class="profile__label" title="Семейное положение">Семейное положение</p>
+                    <p class="profile__value" title="{{user.familyStatus}}">{{user.familyStatus}}</p>
+                </div>
+                <div class="profile__info profile__info_full">
+                    <p class="profile__label" title="Образование">Образование</p>
+                    <p class="profile__value" title="{{user.education}}">{{user.education}}</p>
+                    <p class="profile__label" title="Место работы">Место работы</p>
+                    <p class="profile__value" title="{{user.job}}">{{user.job}}</p>
+                </div>
+            </div>
+
+            <form class="content__block profile hidden" data-id="{{user.id}}">
+                <p class="profile__title profile__title_nowrap">{{user.fullName}}</p>
+                <div class="profile__info profile__info_short profile__info_editable">
+                    <textarea name="status" id="" rows="2"
+                        class="profile__description profile__description_input">{{user.status}}</textarea>
+
+                    <label for="value1" class="profile__label profile__label_input">День рождения</label>
+                    <input type="date" name="birthDay" id="value1" class="profile__value profile__value_input"
+                        value="{{user.birthDay}}">
+
+                    <label for="value2" class="profile__label profile__label_input">Город</label>
+                    <input type="text" name="city" id="value2" class="profile__value profile__value_input" value="{{user.city}}">
+
+                    <label for="value3" class="profile__label profile__label_input">Семейное положение</label>
+                    <select class="profile__value profile__value_input" id="value3" name="familyStatus">
+                        <option value="0" {% if user.familyStatus == 0 %} selected {% endif %}>Не в отношениях</option>
+                        <option value="1" {% if user.familyStatus == 1 %} selected {% endif %}>В браке</option>
+                        <option value="2" {% if user.familyStatus == 2 %} selected {% endif %}>Все сложно</option>
+                    </select>
+
+                </div>
+
+                <div class="profile__info profile__info_full">
+                    <label for="value4" class="profile__label profile__label_input">Образование</label>
+                    <input type="text" name="education" id="value4" class="profile__value profile__value_input" value="{{user.education}}">
+                    <label for="value5" class="profile__label profile__label_input">Место работы</label>
+                    <input type="text" name="job" id="value5" class="profile__value profile__value_input" value="{{user.job}}">
+                </div>
+            </form>
+            <div class="content__block profile-photos">
+                <a href="/img/example/gallery/cat1.jpg" target="_blank" class="profile-photos__photo">
+                    <img src="/img/example/gallery/cat1.jpg" alt="" class="profile-photos__img" />
+                </a>
+                <a href="/img/example/gallery/cat2.jpg" target="_blank" class="profile-photos__photo">
+                    <img src="/img/example/gallery/cat2.jpg" alt="" class="profile-photos__img" />
+                </a>
+                <a href="/img/example/gallery/cat3.jpg" target="_blank" class="profile-photos__photo">
+                    <img src="/img/example/gallery/cat3.jpg" alt="" class="profile-photos__img" />
+                </a>
+                <a href="/img/example/gallery/cat4.jpg" target="_blank" class="profile-photos__photo">
+                    <img src="/img/example/gallery/cat4.jpg" alt="" class="profile-photos__img" />
+                </a>
+
+            </div>
+            <section class="profile-wall">
+            {% for post in postList %}
+                <article class="content__block post">
+                    <div class="post__header">
+                        <a href="" class="post__image">
+                            <img src="{{ post.author.photo }}" alt="" class="post__img">
+                        </a>
+                        <div class="post__header-info">
+                            <a class="post__author">{{ post.author.name }}</a>
+                            <p class="post__date">{{ post.date }}</p>
+                        </div>
+                        <div class="post__menu">⋮
+                            <div class="ui-actions ui-actions_hide">
+                                <p class="ui-actions__menu-item">Удалить</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post__content">
+                        <p class="post__text">{{ post.text }}</p>
+                        <div class="thumbnails">
+                        {% for thumbnail in post.thumbnails %}
+                            <a href="{{ thumbnail }}" target="_blank" class="thumbnails__thumb">
+                                <img src="{{ thumbnail }}" alt="Картинка"
+                                    class="thumbnails__thumb-img">
+                            </a>
+                        {% endfor %}    
+                        </div>
+                    </div>
+                    <div class="post__footer"></div>
+                </article>
+                {% endfor %}  
+            </section>
+        </div>
+        <div class="content__right">
+            <aside class="content__block profile-photo">
+                <a a href="/img/example/user_photo.png" target="_blank" class="profile-photo__photo">
+                    <img src="/img/example/user_photo.png" alt="Фото пользователя" class="profile-photo__img">
+                </a>
+            </aside>
+            <nav class="content__block navigation">
+                <a href="/im" class="navigation__item">
+                    <img src="/img/ui/messages.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Сообщения</p>
+                </a>
+                <a href="" class="navigation__item">
+                    <img src="/img/ui/int.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Интересное</p>
+                </a>
+                <a href="" class="navigation__item">
+                    <img src="/img/ui/friends.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Товарищи</p>
+                </a>
+                <a href="" class="navigation__item">
+                    <img src="/img/ui/video.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Видеотека</p>
+                </a>
+                <a href="" class="navigation__item">
+                    <img src="/img/ui/photo.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Фото</p>
+                </a>
+                <a href="" class="navigation__item">
+                    <img src="/img/ui/music.png" alt="" class="navigation__img navigation__img_round">
+                    <p class="navigation__item-name">Музыка</p>
+                </a>
+            </nav>
+        </div>
+    </main>
+{% endblock %}

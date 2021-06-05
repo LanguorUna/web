@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        {% block main %}{% endblock %}
+        <footer class="footer content__block content__block_down">
+            <div class="footer__title">
+                Также рекомендуем:
+            </div>
+            <div class="footer__sites">
+                <a href="https://fb.com" class="social-link">
+                    <img src="img/sites/fb.png" alt="facebook" class="social-link__img">
+                </a>
+                <a href="https://instagram.com" class="social-link">
+                    <img src="img/sites/instagram.png" alt="Instagram" class="social-link__img">
+                </a>
+                <a href="https://vk.com" class="social-link">
+                    <img src="img/sites/vk.png" alt="Вконтакте" class="social-link__img">
+                </a>
+                <a href="https://twitter.com" class="social-link">
+                    <img src="img/sites/twitter.png" alt="Твиттер" class="social-link__img">
+                </a>
+                <a href="https://pinterest.com" class="social-link">
+                    <img src="img/sites/pinterest.png" alt="Pinterest" class="social-link__img">
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
